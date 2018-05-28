@@ -1,5 +1,5 @@
 # build from alpine and author info
-FROM mysql:8.0
+FROM mysql:5.7.22
 MAINTAINER Ben Futterleib <benjamin.futterleib@gmail.com>
 # run as root user
 USER root
