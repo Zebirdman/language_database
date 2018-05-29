@@ -1,0 +1,38 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: language-db
+  namespace: kube-public
+spec:
+  selector:
+    matchLabels:
+      run: language-db
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: language-db
+    spec:
+      containers:
+      - name: lang-db-frontend
+        image: zeft.server:5000/langdb-web
+        ports:
+          - containerPort: 80
+
+      - name: lang-db-msql
+        image: zeft.server:5000/langdb-db
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: language-db
+  name: language-db
+  namespace: kube-public
+spec:
+  ports:
+    - port: 81
+      targetPort: 80
+  selector:
+    k8s-app: language-db
