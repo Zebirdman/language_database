@@ -1,7 +1,7 @@
 <?php
 
       // ------------------------------------ database connection information -----------------------------
-      define('DBCONNSTRING', 'mysql:host=172.17.0.1;port=3307;dbname=database;charset=utf8');
+      define('DBCONNSTRING', 'mysql:host=127.0.0.1;port=3306;dbname=database;charset=utf8');
       define('DBUSER', 'language_user');
       define('DBPASS', '.Hudeg9m5');
       define('TYPE', 'PDO');
