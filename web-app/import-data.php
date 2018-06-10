@@ -1,7 +1,3 @@
-<?php
-  $prefix = "includes/";
-  include "../config.php";
-?>
 <?php $page_name="import_data"; include_once "includes/header.php" ?>
     <div class="container">
       <form  enctype="multipart/form-data" method="post" name="public-form" action="<?php echo LISTENER?>" id="public-form">

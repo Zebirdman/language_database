@@ -27,14 +27,16 @@ $(document).ready(function() {
 
     var username = $("#user-name").val();
     var password = $("#password").val();
+    console.log("login clicked details are: " + username + " " + password);
     var input = {option: 'login', username: username, password: password};
-
+    console.log(listener);
     $.ajax({
       type: 'POST',
       url: listener,
       data: input
 
-    }).done(function(response){
+    }).done(function(response) {
+      console.log(response);
       window.location.href = response;
     });
   });

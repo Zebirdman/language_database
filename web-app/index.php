@@ -13,7 +13,6 @@
         <div class="col-lg-2">
         </div>
 
-
         <div class="col-lg-4">
           <div class="input-group">
             <span class="input-group-btn">

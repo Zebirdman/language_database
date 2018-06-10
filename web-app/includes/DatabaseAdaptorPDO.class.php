@@ -17,8 +17,10 @@
     *
     */
     public function __construct($values, $log) {
-      $this->setConnectionInfo($values);
       $this->log = $log;
+      //error_log("CONNECTION STRING: ".$values[0],3,"/plog/errors.log");
+      $this->setConnectionInfo($values);
+
     }
 
     //** --------------------------------------- public methods ----------------------------------------- **//

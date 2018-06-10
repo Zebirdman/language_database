@@ -1,4 +1,4 @@
-<?php $page_name="manage_data"; include_once "includes/header.php" ?>
+<?php $page_name="login"; include_once "includes/header.php" ?>
 <div class="container">
   <form class="login-form center-block">
     <div class="form-group">

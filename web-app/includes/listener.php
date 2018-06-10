@@ -11,6 +11,9 @@
 
   //**  -----------------------------------  Process requests here -------------------------------------- **//
 
+  error_log("REQUEST_RECIEVED: logged by normal", 3, "/plog/errors.log");
+  $log->output("REQUEST RECIEVED");
+
   if ($_SERVER["REQUEST_METHOD"] == "GET" || $_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -131,7 +134,9 @@
         break;
 
       case "login":
-        $control->login($_POST);
+        $log->output("login being processed by php listener");
+        $session = new SessionManager($log);
+        $session->processLogInRequest($_POST);
         break;
 
       case "update":

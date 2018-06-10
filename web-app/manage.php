@@ -1,11 +1,3 @@
-<!-- the database management section -->
-<?php
-  $prefix = "includes/";
-  include "../config.php";
-  $control = Factory::createController();
-  $control->checkLogin();
-?>
-
 <?php $page_name="manage_data"; include_once "includes/header.php" ?>
 
 <div class="" style="width:90%; margin:auto;" id="database_container">

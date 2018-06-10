@@ -1,7 +1,8 @@
 <?php
 
       // ------------------------------------ database connection information -----------------------------
-      define('DBCONNSTRING', 'mysql:host=127.0.0.1;port=3306;dbname=database;charset=utf8');
+      define('DBCONNSTRING', 'mysql:host='.getenv('DB_CONN_IP').
+        ';port='.getenv('DB_CONN_PORT').';dbname=database;charset=utf8');
       define('DBUSER', 'language_user');
       define('DBPASS', '.Hudeg9m5');
       define('TYPE', 'PDO');
@@ -20,7 +21,7 @@
       //header("Content-Type: text/html;charset=ISO-8859-1");
 
       //ini_set('default_charset', 'UTF-8');
-
+      require_once $prefix."SessionManager.class.php";
       require_once $prefix."Plog.class.php";
       require_once $prefix."Validator.class.php";
       require_once $prefix."DatabaseAdaptor.inter.php";
@@ -29,5 +30,6 @@
       require_once $prefix."Factory.class.php";
       require_once $prefix."FilterControl.class.php";
       require_once $prefix."htmlManager.class.php";
+
 
  ?>

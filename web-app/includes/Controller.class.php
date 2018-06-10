@@ -189,31 +189,6 @@
     }
 
     /**
-    * Checks whether or not a person is logged in and the session timer hasnt expired, renews the timer if
-    * the session is still valid
-    */
-    public function checkLogin() {
-
-      if(!isset($_SESSION)) {
-        session_start();
-      }
-      $time = time();
-
-      if(!$_SESSION['logged_in']) {
-        $this->log->output("login doesnt exist");
-        header("location: login.php");
-      } else {
-        if($_SESSION["start"] - $time <= 0) {
-          $this->log->output("session expired");
-          $this->logout();
-        } else {
-          $_SESSION["start"] = time() + 600;
-          $this->log->output("session renewed");
-        }
-      }
-    }
-
-    /**
     * refreshes the login timer, used in cunjunction with requests to refresh based upon user
     * interaction.
     */
